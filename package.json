@@ -4,16 +4,17 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    //for heroku setup
-    "start":"node server/server.js",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  //for heroku setup
-  "engines": {"node":"6.9.5"},
+  "engines": {
+    "node": "6.9.5"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "socket.io": "^1.7.3"
   }
 }
