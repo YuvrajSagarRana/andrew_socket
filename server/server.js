@@ -9,18 +9,16 @@ app.use(express.static(publicPath));
 var io=socketIo(server);
 io.on('connection',(socket)=>{
     console.log('Some one has connected');
-    socket.emit('newMessage',{
-        from:"Sagar",
-        data:"this is good",
-        createdAt:"123"
-    })
 
     socket.on('createMessage',(data)=>{
-        console.log(data)
+        console.log(data);
+        io.emit('newMessage',{
+            from:data.from,
+            data:data.data,
+            createdAt:new Date().getTime()
+        })
     })
-   socket.on("createEmail",(data)=>{
-    console.log(data) ;
-   })
+
     socket.on('disconnect',()=>{
         console.log("Get disconnected")
     })
