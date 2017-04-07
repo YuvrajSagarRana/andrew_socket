@@ -4,6 +4,7 @@ socket.on('connect',function (){
     console.log("connected to user");
 
 });
+
 socket.on('disconnect',function (){
     console.log('Disconnected');
 });
